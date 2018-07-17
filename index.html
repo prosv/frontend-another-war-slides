@@ -1,210 +1,417 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Shower Presentation Engine</title>
+	<title>Фронтенд: Другая война</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="node_modules/shower-ribbon/styles/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&amp;subset=cyrillic"
+		  rel="stylesheet">
 	<style>
-        .shower {
-            --slide-ratio: calc(16 / 9);
-        }
-    </style>
+		/*ed1d24*/
+		:root {
+			--header-box-shadow-color: #ed1d24;
+		}
+
+		body {
+			-webkit-font-smoothing: antialiased;
+			font-family: 'Oswald', sans-serif;
+		}
+
+		@font-face {
+			font-family: American-Captain;
+			src: url(./fonts/the-fontry_american-captain/American-Captain.otf) format('opentype'),
+			url(./fonts/the-fontry_american-captain/American-Captain.ttf) format('truetype');
+		}
+
+		/*non-cyrillic*/
+		@font-face {
+			font-family: Deathe-Maach;
+			src: url(./fonts/the-fontry_deathe-maach-ncv/Deathe-Maach-NCV.otf) format('opentype'),
+			url(./fonts/the-fontry_deathe-maach-ncv/Deathe-Maach-NCV.ttf) format('truetype');
+		}
+
+		/*non-cyrillic*/
+		@font-face {
+			font-family: American-Captain-Patrius;
+			src: url(./fonts/the-fontry_american-captain-patrius-02-fre/American-Captain-Patrius-02-FRE.otf) format('opentype');
+			src: url(./fonts/the-fontry_american-captain-patrius-02-fre/American-Captain-Patrius-02-FRE.ttf) format('truetype');
+		}
+
+		@font-face {
+			font-family: FTY-STRATEGYCIDE;
+			src: url(./fonts/the-fontry_fty-strategycide-ncv/FTY-STRATEGYCIDE-NCV.ttf) format('truetype');
+		}
+
+		/*non-cyrillic*/
+		@font-face {
+			font-family: AMCAP-Eternal;
+			src: url(./fonts/the-fontry_amcap-eternal/AMCAP-Eternal.otf) format('opentype');
+			src: url(./fonts/the-fontry_amcap-eternal/AMCAP-Eternal.ttf) format('truetype');
+		}
+
+		/*non-cyrillic*/
+		@font-face {
+			font-family: FTY-SKORZHEN;
+			src: url(./fonts/the-fontry_fty-skorzhen-ncv/FTY-SKORZHEN-NCV.otf) format('opentype');
+			src: url(./fonts/the-fontry_fty-skorzhen-ncv/FTY-SKORZHEN-NCV.ttf) format('truetype');
+		}
+
+		/*non-cyrillic*/
+		@font-face {
+			font-family: FTY-SKRADJHUWN;
+			src: url(./fonts/the-fontry_fty-skradjhuwn-ncv/FTY-SKRADJHUWN-NCV-1.ttf) format('truetype');
+		}
+
+		body {
+
+		}
+
+		.shower {
+			--slide-ratio: calc(16 / 9);
+		}
+
+		.slide::after {
+			display: none;
+		}
+
+		.slide h2 {
+			font-size: 55px;
+			letter-spacing: 7px;
+			font-family: 'American-Captain', sans-serif;
+			color: white;
+			/*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+			/*text-shadow: 1px 1px 0 var(--header-box-shadow-color),*/
+			/*-1px 1px 0 var(--header-box-shadow-color),*/
+			/*1px -1px 0 var(--header-box-shadow-color),*/
+			/*-1px -1px 0 var(--header-box-shadow-color),*/
+			/*0px 1px 0 var(--header-box-shadow-color),*/
+			/*0px -1px 0 var(--header-box-shadow-color),*/
+			/*-1px 0px 0 var(--header-box-shadow-color),*/
+			/*1px 0px 0 var(--header-box-shadow-color),*/
+			/*2px 2px 0 var(--header-box-shadow-color),*/
+			/*-2px 2px 0 var(--header-box-shadow-color),*/
+			/*2px -2px 0 var(--header-box-shadow-color),*/
+			/*-2px -2px 0 var(--header-box-shadow-color),*/
+			/*0px 2px 0 var(--header-box-shadow-color),*/
+			/*0px -2px 0 var(--header-box-shadow-color),*/
+			/*-2px 0px 0 var(--header-box-shadow-color),*/
+			/*2px 0px 0 var(--header-box-shadow-color),*/
+			/*1px 2px 0 var(--header-box-shadow-color),*/
+			/*-1px 2px 0 var(--header-box-shadow-color),*/
+			/*1px -2px 0 var(--header-box-shadow-color),*/
+			/*-1px -2px 0 var(--header-box-shadow-color),*/
+			/*2px 1px 0 var(--header-box-shadow-color),*/
+			/*-2px 1px 0 var(--header-box-shadow-color),*/
+			/*2px -1px 0 var(--header-box-shadow-color),*/
+			/*-2px -1px 0 var(--header-box-shadow-color);*/
+			text-shadow: 2px 0 0 var(--header-box-shadow-color),
+			-2px 0 0 var(--header-box-shadow-color),
+			0 2px 0 var(--header-box-shadow-color),
+			0 -2px 0 var(--header-box-shadow-color),
+			2px 2px var(--header-box-shadow-color),
+			-2px -2px 0 var(--header-box-shadow-color),
+			2px -2px 0 var(--header-box-shadow-color),
+			-2px 2px 0 var(--header-box-shadow-color);
+		}
+
+		.slide ul > li::before, .slide ol > li::before {
+			color: black;
+		}
+	</style>
 </head>
 <body class="shower list">
 
-	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
-	</header>
+<header class="caption">
+	<h1>Маша Просвирнина</h1>
+</header>
 
-	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="copyright right white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#cover h2 {
-				margin: 30px 0 0;
-				color: white;
-				text-align: center;
-				font-size: 70px;
-			}
+<section class="slide" id="cover">
+	<h2>Фронтенд</h2>
+	<h3>Другая война</h3>
+	<figure>
+		<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+		<figcaption class="copyright right white">
+		</figcaption>
+	</figure>
+	<style>
+		#cover h2 {
+			letter-spacing: 12px;
+			color: white;
+			text-align: center;
+			font-size: 120px;
+			font-family: 'American-Captain', sans-serif;
+			font-weight: 300;
+			margin-top: 300px;
+			text-transform: uppercase;
+			margin-bottom: 0;
+			text-shadow: none;
+		}
 
-			#cover p {
-				margin: 10px 0 0;
-				text-align: center;
-				color: white;
-				font-style: italic;
-				font-size: 20px;
-			}
+		#cover h3 {
+			letter-spacing: 13px;
+			text-align: center;
+			color: white;
+			font-size: 30px;
+			margin-top: -20px;
+			font-family: 'FTY-STRATEGYCIDE', sans-serif;
+			text-transform: uppercase;
+			padding-left: 20px;
+		}
+	</style>
+</section>
 
-			#cover p a {
-				color: white;
-			}
-		</style>
-	</section>
+<section class="slide">
+	<div class="slide-center">
+		<img class="different" src="./pictures/different.jpg">
+	</div>
+	<style>
+		.different {
+			width: 100%;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
-	</section>
+<section class="slide">
+	<img class="gif" src="https://media.giphy.com/media/3o7buirYcmV5nSwIRW/giphy.gif">
+	<style>
+		.slide-gif {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			padding: 0;
+		}
 
-	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
+		.gif {
+			width: 100%;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<div class="columns two">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-		</div>
-	</section>
+<section class="slide">
+	<div class="slide-center">
+		<svg id="okko" viewBox="0 0 137 50" width="100%" height="100%">
+			<path fill="inherit"
+				  d="M82.34 42.96l1.95-2.81 8.43 9.42h11.44L89.27 32.92l13.3-19.28H92.21l-9.87 14.31V1.02h-8.51v48.55h8.51zm-32.81 0l1.94-2.81 8.44 9.42h11.45l-14.9-16.65 13.3-19.28H59.4l-9.87 14.31V1.02h-8.51v48.55h8.51zm49.94-11.82c0 10.41 8.4 18.86 18.77 18.86C128.6 50 137 41.55 137 31.14c0-10.42-8.4-18.86-18.76-18.86-10.37 0-18.77 8.44-18.77 18.86zm-80.7-18.86C8.4 12.28 0 20.72 0 31.14 0 41.55 8.4 50 18.77 50c10.36 0 18.76-8.45 18.76-18.86 0-10.42-8.4-18.86-18.76-18.86zM18.61 0c-2.35 0-4.25 1.91-4.25 4.28 0 2.36 1.9 4.28 4.25 4.28s4.25-1.92 4.25-4.28c0-2.37-1.9-4.28-4.25-4.28zm11.28 0c-2.35 0-4.25 1.91-4.25 4.28 0 2.36 1.9 4.28 4.25 4.28s4.26-1.92 4.26-4.28c0-2.37-1.91-4.28-4.26-4.28zM8.36 0C6.01 0 4.1 1.91 4.1 4.28c0 2.36 1.91 4.28 4.26 4.28 2.35 0 4.25-1.92 4.25-4.28 0-2.37-1.9-4.28-4.25-4.28zm.15 31.14c0-5.68 4.6-10.31 10.26-10.31 5.65 0 10.25 4.63 10.25 10.31 0 5.68-4.6 10.3-10.25 10.3-5.66 0-10.26-4.62-10.26-10.3zm99.47 0c0-5.68 4.6-10.31 10.26-10.31 5.65 0 10.25 4.63 10.25 10.31 0 5.68-4.6 10.3-10.25 10.3-5.66 0-10.26-4.62-10.26-10.3z"></path>
+		</svg>
+	</div>
+	<style>
+		.slide-center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			margin-top: -45px;
+		}
 
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
+		#okko {
+			width: 60%;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
+<section class="slide">
+	<div class="devices-first-line">
+		<img class="" src="pictures/icons/smartphone.png">
+		<img class="" src="pictures/icons/tv.png">
+		<img class="" src="pictures/icons/laptop.png">
+		<img class="" src="pictures/icons/console.png">
+	</div>
+	<style>
+		.devices-first-line {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			margin-top: -45px;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Code samples</h2>
-		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
-		</pre>
-	</section>
+<section class="slide">
+	<div class="devices-first-line">
+		<img class="opacity" src="pictures/icons/smartphone.png">
+		<img class="" src="pictures/icons/tv.png">
+		<img class="" src="pictures/icons/laptop.png">
+		<img class="" src="pictures/icons/console.png">
+	</div>
+	<style>
+		.opacity {
+			opacity: 0.2;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
-	</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="copyright right white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
-		<style>
-			#picture h2 {
-				color: white;
-			}
-		</style>
-	</section>
+<section class="slide marvel-cover marvel-cover-0">
+	<h2>Tech</h2>
+	<ul>
+		<li class="next">ARM</li>
+		<li class="next">Low RAM</li>
+	</ul>
+	<style>
+		.marvel-cover-0:after {
+			background: linear-gradient(-60deg, transparent 10%, rgba(255, 255, 255, 1) 45%), url("./pictures/covers/0.png");
+			background-size: cover;
+			filter: saturate(1.7) contrast(1.2);
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
-	</section>
+<section class="slide marvel-cover marvel-cover-1">
+	<h2>Browser engines</h2>
+	<ul>
+		<li class="next">Webkit</li>
+		<li class="next">Gecko</li>
+		<li class="next">Opera</li>
+	</ul>
+	<style>
+		.marvel-cover-1::after {
+			background: linear-gradient(-60deg, transparent 10%, rgba(255, 255, 255, 1) 45%), url("./pictures/covers/11.jpg");
+			background-size: cover;
+			background-position: right bottom;
+			filter: saturate(1.2);
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</section>
 
-	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
-	</section>
+<section class="slide marvel-cover marvel-cover-2">
+	<h2>10-foot user interface</h2>
+	<ul>
+		<li class="next">Screen estate</li>
+		<li class="next">Information Density</li>
+		<li class="next">Remote control</li>
+	</ul>
+	<style>
+		.marvel-cover-2::after {
+			background: linear-gradient(-60deg, transparent 10%, rgba(255, 255, 255, 1) 45%), url("./pictures/covers/10.jpg");
+			background-size: auto 100%;
+			background-position: bottom right;
+			filter: saturate(1.3) contrast(1.3);
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</section>
 
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
-		<style>
-			#see-more h2 {
-				font-size: 100px
-			}
+<section class="slide marvel-cover marvel-cover-3">
+	<h2>Spatial navigation</h2>
+	<ul>
+		<li class="next">Remote</li>
+		<li class="next">Left, Right, Up, and Down</li>
+	</ul>
+	<style>
+		.marvel-cover-3::after {
+			background: linear-gradient(-60deg, transparent 10%, rgba(255, 255, 255, 1) 45%), url("./pictures/covers/6.png");
+			background-size: cover;
+			filter: contrast(1.3);
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</section>
 
-			#see-more img {
-				width: 0.72em;
-				height: 0.72em;
-			}
-		</style>
-	</section>
+<section class="slide">
+	<figure>
+		<img class="cover cover-margin-top" src="./pictures/spatial.png" alt="Hands on the orange typewriter in a park">
+		<figcaption class="copyright right white">
+		</figcaption>
+	</figure>
+	<style>
+		.cover-margin-top {
+			margin-top: -15px;
+		}
+	</style>
+</section>
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
+<section class="slide marvel-cover marvel-cover-4">
+	<h2>Debug</h2>
+	<ul class="line-through">
+		<li class="next">Livereload</li>
+		<li class="next">DevTools</li>
+	</ul>
+	<style>
+		.line-through {
+			text-decoration: line-through;
+		}
 
-	<div class="progress"></div>
+		.marvel-cover-4::after {
+			background: linear-gradient(-60deg, transparent 10%, rgba(255, 255, 255, 1) 45%), url("./pictures/covers/9.jpg");
+			background-size: cover;
+			filter: contrast(1.3);
+			content: '';
+			display: block;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</section>
 
-	<script src="node_modules/shower-core/shower.min.js"></script>
-	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+<section class="slide" id="see-more">
+	<p>@prosvirnina12</p>
+	<ol>
+		<li><a href="https://blogs.adobe.com/creativecloud/designing-user-experiences-for-the-10-foot-ui/">Designing
+			User Experiences for the 10-Foot UI</a></li>
+		<li><a href="https://wicg.github.io/spatial-navigation/">Spatial Navigation, Editor’s Draft</a></li>
+		<li><a
+			href="https://medium.com/netflix-techblog/crafting-a-high-performance-tv-user-interface-using-react-3350e5a6ad3b">Crafting
+			a high-performance TV user interface using React</a></li>
+		<li><a href="https://medium.com/netflix-techblog/pass-the-remote-user-input-on-tv-devices-923f6920c9a8">Pass the
+			Remote: User Input on TV Devices</a></li>
+	</ol>
+	<style>
+		#see-more h2 {
+			font-size: 100px
+		}
+
+		#see-more img {
+			width: 0.72em;
+			height: 0.72em;
+		}
+	</style>
+</section>
+
+<!--<div class="progress"></div>-->
+
+<script src="node_modules/shower-core/shower.min.js"></script>
+<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
 
 </body>
 </html>
